@@ -76,7 +76,7 @@ public class Exercicios {
         Scanner c = new Scanner(System.in);
         int branco = c.nextInt();
 
-        System.out.println("Digite o total de votos em nulo: ");
+        System.out.println("Digite o total de votos em nulos: ");
 
         Scanner d = new Scanner(System.in);
         int nulo = d.nextInt();
@@ -87,5 +87,7 @@ public class Exercicios {
     public static void main( String[] args ) {
         exercicio3();
     }
+
+
 
 }
