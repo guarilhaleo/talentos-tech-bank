@@ -24,28 +24,111 @@ public class Main {
     public static void exercicio2(){
     //Escreva um algoritmo que leia números, insira em um array e após mostre a quantidade de números negativos.
 
+        Scanner scanner = new Scanner(System.in);
 
+        List<Integer> numeros = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite um número");
+            numeros.add(scanner.nextInt());
+        }
+
+        System.out.println(numeros);
+
+
+        scanner.close();
 
 
     }
 
     public static void exercicio3(){
+    //Escreva um algoritmo que leia números, insira em um array e após mostre a quantidade de números pares.
+
+        Scanner scanner = new Scanner(System.in);
+
+        List<Integer> numeros = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite um número");
+            numeros.add(scanner.nextInt());
+        }
 
 
+        int quantidade = 0;
+        for (Integer numero : numeros) {
+            if (numero < 0) {
+                quantidade++;
+            }
+        }
+        System.out.println(quantidade);
 
+
+        System.out.println(numeros.stream().filter(numero -> numero < 0).count());
+
+
+        scanner.close();
     }
 
     public static void exercicio4(){
+    //Escreva um algoritmo que leia números, insira em um array e após mostre o maior valor.
+
+        Scanner scanner = new Scanner(System.in);
+
+        List<Integer> numeros = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite um número");
+            numeros.add(scanner.nextInt());
+        }
 
 
+        int quantidade = 0;
+        for (Integer numero : numeros) {
+            if (numero % 2 == 0) {
+                quantidade++;
+            }
+        }
+        System.out.println(quantidade);
 
+
+        System.out.println(numeros.stream().filter(numero -> numero % 2 == 0).count());
+
+
+        scanner.close();
 
     }
 
     public static void exercicio5(){
+    //Escreva um algoritmo que simula um jogo da forca simples. o usuario precisara
+    // adivinhar uma palavra chutando cada letra em no máximo 10 chutes, caso o
+    // usuario acerte a letra o jogo dirá que ele acertou, caso tenha errado, o
+    // numero de tentativas vai diminuindo. Caso o numero de tentativas chegue a 0 o usuário perde.
+
+        Scanner scanner = new Scanner(System.in);
+
+        List<Integer> numeros = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite um número");
+            numeros.add(scanner.nextInt());
+        }
 
 
+        int maiorValor = numeros.get(0);
+        for (Integer numero : numeros) {
+            if (numero > maiorValor) {
+                maiorValor = numero;
+            }
+        }
+        System.out.println(maiorValor);
 
+        System.out.println(Collections.max(numeros));
+
+        System.out.println(numeros.stream().max(Integer::compare).get());
+
+        System.out.println(numeros.stream().mapToInt(v -> v).max().getAsInt());
+
+        scanner.close();
 
     }
 
